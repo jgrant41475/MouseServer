@@ -124,11 +124,14 @@ class MouseServer:
             elif command == "VMUTE":
                 pag.press("volumemute")
 
+            elif command == "EXIT":
+                pag.hotkey("alt", "f4")
+
             elif command == "SLEEP":
                 print("Terminating connection with " + remote[0] + "\nGoing to sleep...")
                 conn.send(self.RESPONSE_CLOSE)
                 conn.close()
-                runShell("PSTOOLS\\psshutdown.exe -d -f -t 0")
+                runShell("C:\\Users\\johng\\PycharmProjects\\MouseServer\\PSTools\\psshutdown.exe -d -f -t 0")
                 break
 
             elif command == "RCLICK":
